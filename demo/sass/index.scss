@@ -1,0 +1,5 @@
+@import '../../stylesheets/YYUI-reset';
+@import '../../stylesheets/YYUI';
+body {
+  @include YY-body-front();
+}

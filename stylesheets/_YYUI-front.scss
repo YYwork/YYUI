@@ -1,0 +1,40 @@
+body {
+  font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+
+
+/* 非衬线字体*/
+
+.y-sans-serif {
+  font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif
+}
+
+
+/* 衬线字体*/
+
+.y-serif {
+  font-family: Georgia, "Times New Roman", Times, SimSun, FontAwesome, serif
+}
+
+
+/* 等宽字体*/
+
+.y-monospace {
+  font-family: Monaco, Menlo, Consolas, "Courier New", FontAwesome, monospace
+}
+
+
+/* 反锯齿平滑渲染*/
+
+.y-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* 浏览器的默认平滑字体*/
+
+.y-no-smoothing {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}

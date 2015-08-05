@@ -1,0 +1,35 @@
+{
+  "name": "YYUI",
+  "version": "0.1.0",
+  "description": "",
+  "main": [
+
+  ],
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "flexible.js": "~0.3.2"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "YYUI",
+    "compass",
+    "susy"
+  ],
+  "authors": [
+    "FuGardenia <fooying@qq.com> (http://blog.yunjiagou.wang)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

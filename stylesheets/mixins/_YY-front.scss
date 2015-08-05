@@ -1,0 +1,12 @@
+/**
+ * YY-body-front
+ * @param  {[]} $front
+ * @param  {[sans-serif or serif]} $serif {default sans-serif}
+ * @return font-family
+ */
+
+$default-front: '"Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial';
+@mixin YY-body-front($front: $default-front, $serif: sans-serif) {
+  font-family: #{$front},
+  #{$serif};
+}
