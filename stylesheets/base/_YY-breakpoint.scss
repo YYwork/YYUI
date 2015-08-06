@@ -1,0 +1,14 @@
+/**
+ * Really simple media queries in Sass
+ * http://breakpoint-sass.com/
+ */
+
+@import 'breakpoint';
+// assume min-width (by default) if only a number
+$high-tide: 500px;
+// set min-width/max-width if both values are numbers
+$ex-presidents: 600px 800px;
+// if one value is a string, assume a feature/value pair
+$surfboard-width: max-width 1000px;
+// string tests together within parentheses, assume each item is a feature value pair
+$surfboard-height: (min-height 1000px) (orientation portrait);

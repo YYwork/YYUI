@@ -1,19 +1,6 @@
 @import 'normalize';
 
 /**
- * 将所有元素的盒模型设置为 border-box
- */
-
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
-/**
  * 将浏览器的基准字号设置为 10px
  */
 
@@ -29,4 +16,17 @@ html {
 body {
   font-size: 1.6rem;
   /* =16px */
+}
+
+
+/**
+ * 将所有元素的盒模型设置为 border-box
+ */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }

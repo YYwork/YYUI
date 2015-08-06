@@ -1,0 +1,331 @@
+/**
+ * Susy your layout | our math
+ * http://susy.oddbird.net/
+ *
+ * 参考: http://www.w3cplus.com/preprocessor/susy-docs.html
+ */
+
+@import "susy";
+$susy: (
+/**
+ * [flow 设置文本阅读方向。除非另有声明，否则布局元素就会根据 flow 的值确定堆叠方向。]
+ * 作用域: global, local
+ * 可选值: rtl | ltr
+ * 默认值: ltr
+ *
+ * ltr: 布局元素从左到右布局。
+ * rtl: 布局元素从右到左布局。
+ */
+
+flow: ltr,
+/**
+ * [math Susy 既可以生成相对宽度（使用百分比），也可以生成固定宽度（使用给出的单位）。]
+ * 作用域: global, local
+ * 可选值: fluid | static
+ * 默认值: fluid
+ *
+ * fluid: 内部的所有栅格元素都会根据外部的容器宽度生成相应的百分比值。
+ * static: 内部的所有栅格宽度值会被计算为 column-width 参数值的倍数。如果你将 column-width 设为 4em，那么栅格宽度就会生成以 em 为单位的值，同时该宽度还会是 column-width 的整数倍。
+ */
+
+math: fluid,
+/**
+ * [在 Susy 中可以使用多种布局技巧。现在，Susy 中已有一个浮动模块，同时还有一个基于浮动模块的孤立处理方案。未来，还会加入 flexbox、grid 和其他布局方式。]
+ * 作用域: global, local
+ * 可选值: float | isolate
+ * 默认值: float
+ *
+ * float: 浮动布局是网页中最常用的布局方式了。
+ * isolate: 孤立布局（isolation）是由 John Albin Wilkins 开发的一种布局技巧，主要用来解决流动布局中的子像素约取错误。我们发现使用这个技巧有助于修正糟糕的约取错误，同时认为这个技术本身太过于机巧了。
+ */
+
+output: float,
+/**
+ * [gutter-position 在布局中添加间距，该属性用来明确所添加间距的位置和方式，甚至是明确是将其设为布局元素的内边距和是外边距。]
+ * 作用域: global, local
+ * 可选值: before | after | split | inside | inside-static
+ * 默认值: after
+ *
+ * before:依据布局流的方向（从左到右，从右到左），将间距设为布局元素左外边距（从左到右）或右外边距（从右到左）。最终会移除每行第一个元素的间距。
+ * after:依据布局流的方向（从左到右，从右到左），将间距设为布局元素右外边距（从左到右）或左外边距（从右到左）。最终会移除每行最后一个元素的外边距。
+ * split:将间距设为布局元素的左右两个外边距，并且不移除边缘处栅格的外边距。
+ * inside:将间距设为布局元素的左右两个内边距，并且不移除边缘处栅格的内边距。
+ */
+
+gutter-position: after,
+/**
+ * [container 设置容器元素的最大宽度。]
+ * 作用域: global, local[container only]
+ * 可选值: <length> | auto
+ * 默认值: auto
+ *
+ * <length>: 可以设置任意精确的数值（比如 60em 或者 80%），然后该数值会成为容器的宽度值。
+ * <auto>: Susy 会依据其他的栅格设置，自动计算容器的宽度，最后返回一个百分比。
+ *
+ * 对于固定宽度的布局，需要设置 column-width 替换 container: auto。将容器划分为连续的纵列往往会遇到子像素约取问题，这让每个开发者都感到头疼。
+ */
+
+container: auto,
+/**
+ * [container-position 相对父元素（通常为浏览器窗口）排列容器元素。]
+ * 作用域: global, local[container only]
+ * 可选值: left | center | right | <length> [*2]
+ * 默认值: center
+ *
+ * left: 使用 margin-left: 0; 和 margin-right: auto;，将容器元素从左开始排列。
+ * center: 同时设置 margin 左右边距值为 auto，将容器元素剧中排列。
+ * right: 使用 margin-left: auto; 和 margin-right: 0;，将容器元素从右开始排列。
+ * <length> [*2]: 如果给定了一个准确的长度，那么这个长度将会被解析为容器两侧的边距，从而使容器和浏览器视口的边缘形成一定的距离。如果给定了两个值，那么就会被分别解析为左右边距值。
+ */
+
+container-position: center,
+/**
+ * [columns 配置栅格的数量或编制。]
+ * 作用域: global, local
+ * 可选值: <number> | <list>
+ * 默认值: 4
+ *
+ * <number>: 构成布局的纵列数量。
+ * <list>: 对于不对称栅格，需要基于第一个纵列的宽度，列出每一个纵列的宽度。(1, 2) 不对称栅格将会创建两个纵列，其中第二个纵列的宽度是第一个纵列的两倍。对于斐波那契栅格，可以设为 (1 1 2 3 5 8 13)。
+ */
+
+columns: 12,
+/**
+ * [gutters 为栅格中的纵列设置间距（译者注：间距与框模型的内边距、外边距是不同的概念）。]
+ * 作用域: global, local
+ * 可选值: <ratio>
+ * 默认值: 1/4
+ *
+ * <ratio>:间距可以依据纵列宽度的一个比例来确定。默认的 1/4 比值表示间距为纵列宽度的四分之一。对于不对称布局，间距是一个纵列宽度单位的四分之一。
+ * 如果你想设置更准确的纵列宽度和间距，可以讲 gutters 值按 <gutter-width>/<column-width> 形式赋值，也可以带上具体的单位。
+ *
+ * 70px 的纵列宽度, 20px 的间距
+ * $susy: (
+ *  gutters: 20px/70px,
+ * );
+ */
+
+gutters: .25,
+/**
+ * [column-width 为特定纵列设置准确的宽度值。]
+ * 作用域: global, local
+ * 可选值: <length> | false/null
+ * 默认值: false
+ *
+ * <length>:该值确定纵列的宽度，需要使用有效的单位。在固定宽度布局中，该值用来计算所有栅格的宽度，但在浮动布局中，只会用来计算外部容器的最大宽度（max-width）。
+ * false/null:在浮动布局中没有必要设置明确的纵列宽度，除非你想生成精确的容器宽度。
+ */
+
+column-width: false,
+/**
+ * [sizing 设置全局的盒模型规则。]
+ * 作用域: global, local
+ * 可选值: border-box | content-box
+ * 默认值: content-box
+ *
+ * content-box:除非另作声明，否则浏览器将会使用 content-box 模型。
+ * border-box:如果你正在使用类似 Paul Irish 的通用 border-box 技巧，那么你就有必要将该选项设置为 border-box。你也可以使用 border-box-sizing 混合宏，更细节的工作我们会帮你解决的。
+ */
+
+global-box-sizing: border-box,
+/**
+ * [last-flow 当使用浮动布局时，该设置用来确定每行最后一个元素的浮动方向。]
+ * 作用域: global
+ * 可选值: from | to
+ * 默认值: to
+ *
+ * from:这是布局中所有元素的默认值。在从左到右的布局流中，from 的方向就是 left，相应的最后一个元素的浮动方向就是 left。
+ * to:在很多情况下（特别是流动布局中），将每行的最后一个元素浮动到相反的方向非常有用。
+ */
+
+last-flow: to,
+/**
+ * [debug 使用 Susy 布局时，可以使用内建的一些调试工具。下面的这些设置有利于你控制调试环境。]
+ * 作用域: global, local[container only]
+ * 可选值: map of sub-settings
+ *
+ * 提醒：栅格图片的位置有时并不精确。浏览器对于背景图片也有子像素约取错误。这意味着无法实现完美像素的尺寸，也意味着调试过程的艰难。预期中栅格图片 to 的方向（如果是从左到右布局流，那么 to 的方向就是 right）会有少许像素的偏移。
+ */
+
+debug: (
+/**
+ * [image 控制栅格图片的启用和关闭。]
+ * 作用域: global, local[container only]
+ * 可选值: show | hide | show-colums | show-baseline
+ * 默认值: hide
+ *
+ * show:通常为了调试，会为容器元素的背景显示栅格图片。如果你使用 Compass vertical rhythms（或者设置了自定义的 $base-line-height 变量），Susy 都会展示网格基线。
+ * hide:隐藏所有的栅格调试图片。
+ * show-columns:只显示纵向的栅格列，即使只有一条栅格基线。
+ * show-baseline:如果设置了 $base-line-hieght 变量，那么就会只显示栅格基线。
+ */
+
+image: hide,
+/**
+ * [color 改变栅格图片上的纵列颜色。]
+ * 作用域: global
+ * 可选值: <color>
+ * 默认值: rgba(#66f, .25)
+ */
+
+color: rgba(#66f, .25),
+/**
+ * [output 调试图片既可以显示为容器的背景，也可以生成一个覆盖层。]
+ * 作用域: global, local[container only]
+ * 可选值: background | overlay
+ * 默认值: background
+ *
+ * background:调试图片将会生成为容器元素的背景图片。
+ * overlay:调试图片给将会使用为容器元素添加 ::before 元素，从而生成一个覆盖层。默认会隐藏覆盖层，但也会在窗口的一角提供一个触发点。鼠标悬停到这个触发点时，就会将覆盖层显示出来。
+ */
+
+output: background,
+/**
+ * [toggle 如果你启用了栅格覆盖层选项，Susy 将会生成一个触发点，用来显示或隐藏覆盖层。当鼠标悬停到这个触发点时，就会显示覆盖层。你也可以通过组合使用 top right bottom 和 left，指定触发点的位置。]
+ * 作用域: global, local[container only]
+ * 可选值: right | left 和 top | bottom
+ * 默认值: top right
+ */
+
+toggle: top right, ),
+/**
+ * [use-custom 用户自定义]
+ *
+ * 这里有一些通用的辅助函数用来使用 Susy，也可以自定义相关属性或使用一个第三方库，比如 Compass 或 Bourbon。
+ */
+
+use-custom: (
+/**
+ * [background-image 自定义背景图片 告知 Susy 在全局使用 background-image 混合宏。这个属性只适用于调试模式。]
+ *
+ * 作用域: global
+ * 可选值: <boolean>
+ * 默认值: true
+ *
+ * false:Susy 将会直接生成背景图片的 CSS 代码。
+ * true:Susy 将会查看是否存在 background-image 混合宏（比如来自 Compass 和 Bourbon 的混合宏），如果没有找到就只会生成 CSS 代码。
+ */
+
+background-image: true,
+/**
+ * [background-options 自定义背景选项 告知 Susy 在全局使用 background-size，-origin 和 -clip 混合宏。该属性只适用于调试模式。]
+ *
+ * 作用域: global
+ * 可选值: <boolean>
+ * 默认值: false
+ *
+ * false:Susy 将会直接生成 background-options 的 CSS 代码。
+ * true:Susy 将会查看是否存在 background-size，-origin 和 -clip 混合宏（比如来自 Compass 和 Bourbon 的混合宏），如果没有找到就只会生成 CSS 代码。
+ */
+
+background-options: false,
+/**
+   * [box-sizing 自定义 Box Sizing告知 Susy 在全局使用 box-sizing 混合宏。]
+   *
+   * 作用域: global
+   * 可选值: <boolean>
+   * 默认值: true
+   *
+   * false:Susy 将会是输出 -moz、-webkit 以及标准形式的 box-sizing。
+   * true:Susy 将会查看现有的 box-sizing 混合宏（比如来自 Compass 和 Bourbon 的混合宏），如果没有找到就回退到 -moz、-webkit 以及标准形式的 box-sizing。
+   */
+
+box-sizing: true,
+/**
+   * [clearfix 告知 Susy 在全局使用 clearfix 混合宏。]
+   * 作用域: global
+   * 可选值: <boolean>
+   * 默认值: false
+   *
+   * false:Susy 使用内建的精简版 clearfix。
+   * true:Susy 将会查找现有的 clearfix 混合宏，如果没有找到，就调用内建的精简版 clearfix。
+   */
+
+clearfix: false,
+/**
+   * [breakpoint 自定义断点选项 告知 Susy 使用自定义的 breakpoint 混合宏，比如插件 [Breakpoint](http://breakpoint-sass.com/) 提供的 breakpoint 混合宏。]
+   *
+   * 作用域: global
+   * 可选值: <boolean>
+   * 默认值: true
+   *
+   * false:Susy 将会使用内建的媒体查询混合宏。
+   * true:Susy 将会查看先有的 breakpoint 混合宏，比如来自插件 Breakpoint 的混合宏。如果没有找到就会回退到内建的媒体查询混合宏。
+   */
+
+breakpoint: true,
+/**
+ * [rem 自定义 Rem 告知 Susy 使用 Compass 支持的 rem 模块。]
+ *
+ * 作用域: global
+ * 可选值: <boolean>
+ * 默认值: true
+ *
+ * false:Susy 将会直接生成长度值的 CSS 代码。
+ * true:Susy 将会查看现有的 rem 混合宏，并检查 Compass 提供的 $rem-with-px-fallback 和 $rhythm-unit 属性。如果没有找到，就只会生成 CSS 代码。
+ */
+
+rem: true, )
+/**
+ * [location 指定栅格中特定的行使用行边缘、孤立或者不对称布局。Location 关键字不需要 at 标志。]
+ * 作用域: local
+ * 可选值: first/alpha | last/omega | <number>
+ * 默认值: null
+ *
+ * first/alpha:定位为 1。
+ * last/omega:定位为最后一个纵列，之前的任意纵列都会被包含在相关的 span 之中。
+ * <number>:将任意纵列定位到 1 到可用纵列总数之间。
+ */
+
+// ,location: '',
+
+/**
+ * [box-sizing 对任意元素设置新的盒模型。]
+ * 作用域: local
+ * 可选值: border-box | content-box
+ * 默认值: null
+ *
+ * border-box:生成的 box-sizing: border-box 模型的 CSS 代码。
+ * content-box:生成的 box-sizing: content-box 模型的 CSS 代码。
+ */
+
+// box-sizing: '',
+
+/**
+ * [spread 调整单个纵列中的诸多间距。]
+ * 作用域: local
+ * 可选值: narrow | wide | wider
+ * 默认值: various…
+ *
+ * narrow:在大多数情况下，跨纵列栅格中都会间距。一个 3 narrow 的布局元素将会包含 3 个纵列和两个内部的间距。默认情况下，这适用于大多数情境。
+ * wide:有时候你需要布局元素包含一个外部的间距。那么一个 3 wide 的布局元素就会包含 3 个纵列和 3 个间距，其中两个间距在内部，一个间距在外部。默认情况下，这适用于少数的几个 margin/padding 混合宏。
+ * wider:有时候你需要布局元素两边都包含间距。那么一个 3 wider 的布局元素就会包含 3 个纵列和 4 个间距，其中两个内部间距，两个外部间距。
+ */
+
+// spread: '',
+
+/**
+ * [gutter-override 为某个元素设置一个一次性的精确值，或者完全移除间距。]
+ *
+ * 作用域: local
+ * 可选值: no-gutters/no-gutter | length
+ * 默认值: null
+ *
+ * no-gutters/no-gutter:Remove all gutter output
+ * <length>:使用精确的值替换既有的间距值。
+ */
+
+// gutter-override: '',
+
+/**
+ * [role 将一个元素设置为包含子元素的嵌套上下文。]
+ *
+ * 作用域: local
+ * 可选值: nest
+ * 默认值: null
+ *
+ * nest:将一个内部的栅格元素设置为包含子元素的嵌套上下文。
+ */
+
+// role: ''
+);

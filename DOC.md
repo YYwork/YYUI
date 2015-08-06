@@ -14,7 +14,9 @@ DOC
 
   $ gem install compass
 
-  $ compass create myproject
+  $ compass create <myproject>
+
+  $ compass install susy
 
   ```
 
