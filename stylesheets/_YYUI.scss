@@ -1,4 +1,6 @@
 // 字体样式
 @import 'mixins/_YY-front.scss';
+// breakpoint 自适应
+@import 'mixins/_YY-response.scss';
 // Susy 布局
 @import 'mixins/_YY-layout.scss';

@@ -53,7 +53,19 @@ DOC
 在此提供两种，移动端适配的方法，两个各有利弊，各有优缺点，推荐 flexible
 
 1. [flexiblejs](./javascript/flexiblejs)
+  ```
+    <script src="https://raw.githubusercontent.com/YYwork/YYUI/master/javascript/flexiblejs/flexible.js"></script>
+  ```
+
 2. [metajs](./javascript/metajs)
+
+  ```
+    <script src="https://raw.githubusercontent.com/YYwork/YYUI/master/javascript/metajs/meta.js"></script>
+  ```
+
+3. [breakpoint](http://breakpoint-sass.com/)
+
+    `@import "breakpoint";`
 
 ## Layout (布局)
   

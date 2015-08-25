@@ -6,10 +6,10 @@ require 'bootstrap-sass'
 
 # Set this to the root of your project when deployed:
 http_path = "/"  # url 路径 https://uda100.com
-css_dir = "demo/css"
-sass_dir = "demo/sass"
-images_dir = "demo/images"
-javascripts_dir = "demo/js"
+css_dir = "demo/YY-test/css"
+sass_dir = "demo/YY-test/sass"
+images_dir = "demo/YY-test/images"
+javascripts_dir = "demo/YY-test/js"
 
 # 开发环境还是生产环境
 environment = :production
