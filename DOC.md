@@ -48,6 +48,10 @@ DOC
     <![endif]-->
   ```
 
+## Response (移动端适配)
+
+在此提供两种，移动端适配的方法，两个各有利弊，各有优缺点，推荐
+
 ## Layout (布局)
   
   * [susy](http://susy.oddbird.net/)

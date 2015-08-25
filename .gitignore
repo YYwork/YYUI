@@ -4,3 +4,4 @@ deploy.*/
 node_modules/
 style/css/
 build/
+.sass-cache/

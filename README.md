@@ -6,6 +6,11 @@ YYUI
   * [Compass](http://compass-style.org/)
   * [susy](http://susy.oddbird.net/)
 
+-- Responsive
+
+  * [flexible](https://github.com/amfe/lib-flexible)
+  * [breakpoint - Really Simple, Organized, Media Queries with Sass](http://breakpoint-sass.com/)
+
 - reference
 
   * [Bootstrap](http://www.bootcss.com/)
@@ -14,8 +19,6 @@ YYUI
 
 - 
 
-  * [flexible](https://github.com/amfe/lib-flexible)
-  * [breakpoint - Really Simple, Organized, Media Queries with Sass](http://breakpoint-sass.com/)
 
 - The Statement
 
