@@ -42,6 +42,8 @@
   }
 ```
 
+---
+
 ## reset
 
 ```
@@ -58,17 +60,15 @@
 
 在代码中添加 [YYUI mixin](./front.md)
 
-```
-  YY-body-front($front, $serif: sans-serif)
-  // $default-front: '"Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial';
-  // $serif: sans-serif or serif;
-```
-
 如果要使用[ YYUI 默认 Front ](./front.md) 
 
 ```
   @import "YYUI-front";
 ```
+
+## [response](./response.md)
+
+
 
 ## layout
 

@@ -53,6 +53,7 @@ DOC
 在此提供两种，移动端适配的方法，两个各有利弊，各有优缺点，推荐 flexible
 
 1. [flexiblejs](./javascript/flexiblejs)
+
   ```
     <script src="https://raw.githubusercontent.com/YYwork/YYUI/master/javascript/flexiblejs/flexible.js"></script>
   ```
@@ -78,7 +79,6 @@ DOC
   $ compass install susy
   ```
 
-  * [DOC susy](./doc/susy.md)
 
 
 ## Typography (排版)
