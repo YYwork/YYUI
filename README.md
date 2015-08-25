@@ -6,7 +6,7 @@ YYUI
   * [Compass](http://compass-style.org/)
   * [susy](http://susy.oddbird.net/)
 
--- Responsive
+- Responsive
 
   * [flexible](https://github.com/amfe/lib-flexible)
   * [breakpoint - Really Simple, Organized, Media Queries with Sass](http://breakpoint-sass.com/)

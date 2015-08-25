@@ -1,0 +1,361 @@
+@import "compass/css3";
+@import "compass/utilities/sprites";
+@import "../bower_components/compass-breakpoint/stylesheets/breakpoint";
+$xstudent-sprite-dimensions: true;
+$xstudent-layout: smart;
+@import "xstudent/*.png";
+@include all-xstudent-sprites();
+$dpr: 64;
+$bg-color: #f3f8f9;
+$bg-color-white: #fff;
+$font-black: #424242;
+$font-blue: #80b0ba;
+$font-gray: #c1c1c1;
+$font-green: #a2cd22;
+$font-line: #e4e9ea;
+$font-style: STXihei;
+html,
+body {
+  background-color: $bg-color;
+  font-family: $font-style, "Microsoft YaHei", "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", sans-serif;
+}
+
+.xstudent-sprite {
+  @include inline-block;
+}
+
+.xstudent-tag-left {
+  position: absolute;
+  left: (-25rem/$dpr);
+  top: (-25rem/$dpr);
+}
+
+.xstudent-tag-right {
+  position: absolute;
+  right: (-25rem/$dpr);
+  top: (-25rem/$dpr);
+}
+
+.xstudent-bg-bottom {
+  background-image: url('../images/bg-bottom.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: (50rem/$dpr);
+}
+
+.xstudent-Xstudent-face {
+  background-image: url('../images/Xstudent-face.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: (322rem/$dpr);
+}
+
+.x-main-introduce {
+  padding: (40rem/$dpr) (30rem/$dpr);
+}
+
+.x-terms-article {
+  position: relative;
+  background-color: $bg-color-white;
+  padding-bottom: (55rem/$dpr);
+}
+
+.x-terms {
+  padding: (50rem/$dpr) (25rem/$dpr) (20rem/$dpr) (35rem/$dpr);
+  color: $font-black;
+  h2 {
+    font-size: (40rem/$dpr);
+    margin-bottom: (62rem/$dpr);
+    color: $font-black;
+    text-align: center;
+  }
+  p {
+    font-size: (22rem/$dpr);
+    line-height: (44rem/$dpr);
+    color: $font-black;
+    margin-bottom: (38rem/$dpr);
+  }
+}
+
+.click-to-join {
+  @include box-sizing(border-box);
+  @include inline-block;
+  width: (544rem/$dpr);
+  height: (88rem/$dpr);
+  line-height: (86rem/$dpr);
+  font-size: (30rem/$dpr);
+  text-align: center;
+  color: $font-blue;
+  border: (1rem/$dpr) solid $font-blue;
+  @include border-radius((6rem/$dpr));
+  background-color: $bg-color-white;
+  text-decoration: none;
+}
+
+.terms-for-usage {
+  vertical-align: top;
+  color: $font-gray;
+  position: relative;
+  font-size: (24rem/$dpr);
+}
+
+.x-main-apply {
+  padding: (50rem/$dpr);
+}
+
+.x-form-group {
+  position: relative;
+  margin-bottom: (32rem/$dpr);
+  .xstudent-jiantou {
+    position: absolute;
+    top: (20rem/$dpr);
+    right: (40rem/$dpr);
+  }
+  label {
+    padding: (6rem/$dpr);
+    @include inline-block;
+    font-size: (28rem/$dpr);
+    line-height: (56rem/$dpr);
+    color: $font-black;
+  }
+  .input {
+    @include box-sizing(border-box);
+    margin-left: (6rem/$dpr);
+    width: (380rem/$dpr);
+    height: (66rem/$dpr);
+    font-size: (28rem/$dpr);
+    padding: (20rem/$dpr) 0;
+  }
+  input {
+    @include box-sizing(border-box);
+    width: (380rem/$dpr);
+    height: (66rem/$dpr);
+    border: (1rem/$dpr) solid $font-gray;
+    font-size: (28rem/$dpr);
+    padding: (20rem/$dpr);
+  }
+  input.button {
+    background-color: $bg-color-white;
+    text-align: left;
+    color: $font-gray;
+    padding-top: (12rem/$dpr);
+  }
+  &.x-form-warming label {
+    color: $font-gray;
+    font-size: (28rem/$dpr);
+  }
+}
+
+.label-nbsp {
+  @include inline-block;
+  width: (56rem/$dpr);
+}
+
+.click-to-apply {
+  margin: 0;
+}
+
+
+/*3*/
+
+.x-main-applyed {
+  padding: (88rem/$dpr) (54rem/$dpr);
+}
+
+.x-applyed-text {
+  margin-left: (100rem/$dpr);
+  margin-right: (100rem/$dpr);
+}
+
+.x-applyed-warming1 {
+  margin-top: (26rem/$dpr);
+  margin-bottom: (26rem/$dpr);
+  color: $font-green;
+  text-align: center;
+  font-size: (54rem/$dpr);
+}
+
+.x-applyed-warming2 {
+  text-align: center;
+  color: $font-black;
+  font-size: (26rem/$dpr);
+}
+
+.x-applyed-btn-group {
+  margin-top: (120rem/$dpr);
+  text-align: center;
+  .x-share {
+    width: (250rem/$dpr);
+    height: (84rem/$dpr);
+    border: (1rem/$dpr) solid $font-green;
+    background-color: $bg-color-white;
+    font-size: (26rem/$dpr);
+    color: $font-green;
+    @include border-radius(6px);
+  }
+  .enter-my-xstudent {
+    margin-left: (20rem/$dpr);
+    width: (250rem/$dpr);
+    height: (84rem/$dpr);
+    border: (1rem/$dpr) solid $font-blue;
+    background-color: $bg-color-white;
+    font-size: (26rem/$dpr);
+    color: $font-blue;
+    @include border-radius(6px);
+  }
+}
+
+// 4
+.x-main-school,
+.x-main-area {
+  padding: 0 (24rem/$dpr);
+  li {
+    position: relative;
+    border-bottom: (1rem/$dpr) solid $font-line;
+    font-size: (28.5rem/$dpr);
+    line-height: (83rem/$dpr);
+    color: $font-black;
+    vertical-align: middle;
+  }
+  li:nth-last-child(1) {
+    border-bottom: (0rem/$dpr) solid $font-line;
+  }
+  .label-left {
+    position: absolute;
+    left: (10rem/$dpr);
+    top: (25rem/$dpr);
+  }
+  .label-right {
+    position: absolute;
+    right: (10rem/$dpr);
+    top: (25rem/$dpr);
+  }
+}
+
+.x-main-area {
+  .label-right {
+    top: (30rem/$dpr);
+  }
+}
+
+.area-search {
+  position: relative;
+  .xstudent-search-icon {
+    position: absolute;
+  }
+  .xstudent-cancel-icon {
+    position: absolute;
+  }
+}
+
+.search-school {
+  @include box-sizing(border-box);
+  border: 0;
+  font-size: (30rem/$dpr);
+  line-height: (83rem/$dpr);
+  color: $font-black;
+  background-color: $bg-color;
+  width: 100%;
+  padding: 0 (60rem/$dpr);
+}
+
+.area-search {
+  position: relative;
+  border-bottom: (1rem/$dpr) solid $font-line;
+  font-size: (28.5rem/$dpr);
+  line-height: (83rem/$dpr);
+  color: $font-black;
+  vertical-align: middle;
+}
+
+//x-main-exchange
+.x-main-exchange {
+  padding: (38rem/$dpr);
+  font-size: (28rem/$dpr);
+  color: $font-black;
+  .exc-top {
+    margin-bottom: (40rem/$dpr);
+  }
+  .exc-con-div {
+    position: relative;
+    .exc-q-coin {
+      position: absolute;
+      right: (20rem/$dpr);
+      top: (0rem/$dpr);
+      color: $font-gray;
+      line-height: (68rem/$dpr);
+    }
+    input {
+      width: (378rem/$dpr);
+      height: (68rem/$dpr);
+      margin-bottom: (10rem/$dpr);
+      padding-left: (8rem/$dpr);
+      padding-right: (8rem/$dpr);
+      @include box-sizing(border-box);
+    }
+    input[type="text"] {
+      @include input-placeholder {
+        color: $font-gray;
+      }
+    }
+  }
+  .exc-label {
+    @include inline-block;
+    width: (174rem/$dpr);
+  }
+  .exc-con-a {
+    margin-top: (38rem/$dpr);
+    .button {
+      @include box-sizing(border-box);
+      display: block;
+      margin: (1rem/$dpr) (18rem/$dpr);
+      width: (544rem/$dpr);
+      height: (88rem/$dpr);
+      line-height: (86rem/$dpr);
+      font-size: (30rem/$dpr);
+      text-align: center;
+      color: $font-blue;
+      border: (1rem/$dpr) solid $font-blue;
+      @include border-radius((6rem/$dpr));
+      background-color: $bg-color-white;
+    }
+  }
+  .exc-explain {
+    margin-top: (36rem/$dpr);
+    color: $font-gray;
+    font-size: (28rem/$dpr);
+    line-height: (52rem/$dpr);
+  }
+  .exc-uda figure {
+    color: $font-gray;
+    font-size: (28rem/$dpr);
+    line-height: (52rem/$dpr);
+  }
+  .statement {
+    margin-top: (90rem/$dpr);
+    color: $font-gray;
+    font-size: (18rem/$dpr);
+    line-height: (26rem/$dpr);
+  }
+}
+
+.xstudent-btn-group {
+  text-align: center;
+  margin: (1rem/$dpr) 0;
+}
+
+$high-tide: 800px;
+html {
+  @include breakpoint($high-tide) {
+    font-size: 64px !important;
+  }
+}
+
+.x-main {
+  @include breakpoint($high-tide) {
+    width: 640px;
+    margin: 0 auto;
+  }
+}
