@@ -1,0 +1,8 @@
+@mixin gray-web($percent: 100%) {
+  filter: grayscale($percent); //IE浏览器
+  -webkit-filter: grayscale($percent); //谷歌浏览器
+  -moz-filter: grayscale($percent); //火狐
+  -ms-filter: grayscale($percent);
+  -o-filter: grayscale($percent);
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+}
